@@ -1,1 +1,1 @@
-# Service package marker.
+# Package marker for TrendTruth app.
