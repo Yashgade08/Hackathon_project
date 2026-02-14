@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrendTruth | Social Signal Verifier</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="bg-ornament bg-1"></div>
+    <div class="bg-ornament bg-2"></div>
+    <main class="container">
+      <section class="hero">
+        <p class="eyebrow">Hackathon Build</p>
+        <h1>TrendTruth Intelligence Console</h1>
+        <p class="subtitle">
+          Tracks what is going viral and estimates authenticity with evidence from trusted news outlets.
+        </p>
+      </section>
+
+      <section class="controls">
+        <div class="control-group">
+          <label for="limit">Trends to analyze</label>
+          <select id="limit">
+            <option value="10">10</option>
+            <option value="20" selected>20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+          </select>
+        </div>
+        <button id="refreshBtn">Run Analysis</button>
+        <p id="status" class="status">Ready.</p>
+      </section>
+
+      <section class="summary-grid" id="summary">
+        <article class="summary-card">
+          <h3>Total Trends</h3>
+          <p id="totalTrends">-</p>
+        </article>
+        <article class="summary-card">
+          <h3>Likely Misleading</h3>
+          <p id="misleadingCount">-</p>
+        </article>
+        <article class="summary-card">
+          <h3>Avg Fake Probability</h3>
+          <p id="avgFake">-</p>
+        </article>
+      </section>
+
+      <section class="results" id="results"></section>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <p class="platform"></p>
+            <h3 class="title"></h3>
+          </div>
+          <span class="verdict"></span>
+        </div>
+
+        <div class="score-row">
+          <div class="metric">
+            <p>Fake Probability</p>
+            <div class="bar"><div class="fill fake"></div></div>
+            <span class="value fake-value"></span>
+          </div>
+          <div class="metric">
+            <p>Spread Index</p>
+            <div class="bar"><div class="fill spread"></div></div>
+            <span class="value spread-value"></span>
+          </div>
+          <div class="metric">
+            <p>Credibility</p>
+            <div class="bar"><div class="fill credibility"></div></div>
+            <span class="value credibility-value"></span>
+          </div>
+        </div>
+
+        <div class="meta-row">
+          <a class="origin-link" target="_blank" rel="noreferrer">View original trend</a>
+          <p class="evidence-summary"></p>
+        </div>
+        <ul class="reasons"></ul>
+        <div class="evidence-links"></div>
+      </article>
+    </template>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
