@@ -28,6 +28,10 @@
             <option value="40">40</option>
           </select>
         </div>
+        <div class="control-group grow">
+          <label>Category</label>
+          <div id="categoryTabs" class="category-tabs"></div>
+        </div>
         <button id="refreshBtn">Run Analysis</button>
         <p id="status" class="status">Ready.</p>
       </section>
@@ -42,11 +46,16 @@
           <p id="misleadingCount">-</p>
         </article>
         <article class="summary-card">
+          <h3>Likely Real</h3>
+          <p id="realCount">-</p>
+        </article>
+        <article class="summary-card">
           <h3>Avg Fake Probability</h3>
           <p id="avgFake">-</p>
         </article>
       </section>
 
+      <section class="source-health" id="sourceHealth"></section>
       <section class="results" id="results"></section>
     </main>
 
@@ -55,6 +64,7 @@
         <div class="card-top">
           <div>
             <p class="platform"></p>
+            <p class="category"></p>
             <h3 class="title"></h3>
           </div>
           <span class="verdict"></span>
